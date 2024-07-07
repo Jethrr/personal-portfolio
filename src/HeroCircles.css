@@ -1,0 +1,14 @@
+.hero-circles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+}
+
+.circle {
+  width: 11px;
+  height: 11px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  background-color: transparent;
+}
