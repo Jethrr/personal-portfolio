@@ -8,7 +8,7 @@
 .circle {
   width: 11px;
   height: 11px;
-  border: 1px solid gray;
+  border: 1px solid white;
   border-radius: 50%;
   background-color: transparent;
 }
