@@ -1,5 +1,16 @@
 "use client";
 import { TypewriterEffectSmooth } from "./typewriter-effect";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faFacebook,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
+const facebook = <FontAwesomeIcon icon={faFacebook} size="2xl" />;
+const github = <FontAwesomeIcon icon={faGithub} size="2xl" />;
+const instagram = <FontAwesomeIcon icon={faInstagram} size="2xl" />;
+
 export function TypewriterEffect() {
   const words = [
     {
@@ -20,15 +31,31 @@ export function TypewriterEffect() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center h-[25rem] mt-20 ">
-      <p className="text-white dark:text-neutral-200 text-xs sm:text-base  ">
+    <div className="flex flex-col items-center justify-center h-[20rem] lg:mt-20 ">
+      <p className="text-white dark:text-neutral-200 text-xs sm:text-base mt-[-10]">
         Got a project in mind or just want to chat?
       </p>
       <TypewriterEffectSmooth words={words} />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-        <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
-          jethomictin@gmail.com
-        </button>
+        <div className="social-media-navs">
+          <div className="nav-links">
+            <ul className="flex items-center justify-center gap-5">
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=100094149589311">
+                  {facebook}
+                </a>
+              </li>
+
+              <li>
+                <a href="https://github.com/Jethrr">{github}</a>
+              </li>
+
+              <li>
+                <a href="https://www.instagram.com/jethvrdio/">{instagram}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
