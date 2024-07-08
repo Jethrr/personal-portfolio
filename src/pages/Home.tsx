@@ -10,19 +10,19 @@ const Home = () => {
       <GridBackgroundDemo />
       <div className="relative z-10 w-full h-screen text-[#B2B5AD] flex items-center justify-center">
         <Spotlight />
-        <div className="home-container h-full w-full shadow-xl mx-4 xl:mx-60">
+        <div className="home-container h-full w-full  mx-4 xl:mx-60">
           <Navbar />
 
           <div className="home-contents my-16">
             <div className="header-nav flex flex-col-reverse xl:flex-row items-center justify-center p-5">
               <div className="heading-texts w-full flex flex-col items-center xl:items-start justify-center xl:justify-start">
-                <h3 className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left">
+                <h3 className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black">
                   Jether Omictin
                 </h3>
-                <h4 className="scroll-m-20 text-xl xl:text-2xl font-semibold tracking-tight text-white text-center xl:text-left">
+                <h4 className="scroll-m-20 text-xl xl:text-2xl font-semibold tracking-tight text-white text-center xl:text-left dark:text-black">
                   Computer Science Student
                 </h4>
-                <blockquote className="mt-6 border-l-2 pl-6 italic text-center xl:text-left">
+                <blockquote className="mt-6 border-l-2 dark:border-black pl-6 italic text-center xl:text-left dark:text-black">
                   "Hi, I am a Computer Science student from Cebu Institute Of
                   Technology University. <br /> Aspiring to be a Full Stack
                   Developer."

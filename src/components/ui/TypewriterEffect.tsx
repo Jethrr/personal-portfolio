@@ -7,9 +7,27 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-const facebook = <FontAwesomeIcon icon={faFacebook} size="2xl" />;
-const github = <FontAwesomeIcon icon={faGithub} size="2xl" />;
-const instagram = <FontAwesomeIcon icon={faInstagram} size="2xl" />;
+const facebook = (
+  <FontAwesomeIcon
+    icon={faFacebook}
+    size="2xl"
+    className="text-current dark:text-black"
+  />
+);
+const github = (
+  <FontAwesomeIcon
+    icon={faGithub}
+    size="2xl"
+    className="text-current dark:text-black"
+  />
+);
+const instagram = (
+  <FontAwesomeIcon
+    icon={faInstagram}
+    size="2xl"
+    className="text-current dark:text-black"
+  />
+);
 
 export function TypewriterEffect() {
   const words = [
@@ -32,7 +50,7 @@ export function TypewriterEffect() {
   ];
   return (
     <div className="flex flex-col items-center justify-center h-[20rem] lg:mt-20 ">
-      <p className="text-white dark:text-neutral-200 text-xs sm:text-base mt-[-10]">
+      <p className="text-white dark:text-black text-xs sm:text-base mt-[-10]">
         Got a project in mind or just want to chat?
       </p>
       <TypewriterEffectSmooth words={words} />
