@@ -1,8 +1,8 @@
+import { motion } from "framer-motion";
 import Navbar from "@/components/ui/Navbar";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { GridBackgroundDemo } from "@/components/ui/GridBackgroundDemo";
 import CardComponent from "@/components/ui/CardComponent";
-
 import { CardHoverEffectDemo } from "@/components/ui/CardHoverEffectDemo";
 
 interface CardData {
@@ -20,11 +20,10 @@ const cardsData: CardData[] = [
     title: "TeknoLost App",
     description:
       "A lost and found mobile application built using Android Studio and Firebase.",
-    content:
-      "This is my final Project for CSIT284 platform based development. Implemented features include: user authentication, lost and found item posting.",
+    content: "This is my final Project for CSIT284 platform based development.",
     footerText: "Java / Firebase",
     footerIconClass: "bg-orange-500",
-    githubLink: "https://github.com/Jethrr?tab=repositories",
+    githubLink: "https://github.com/Jethrr/TeknoLost",
     imageUrl: "src/assets/images/teknolost.png",
   },
   {
@@ -32,7 +31,7 @@ const cardsData: CardData[] = [
     description:
       "A gym appoinment/management system built using PHP and MYSQL.",
     content:
-      "A web-based project for information management system 1. Aims to provide a platform for gym owners to manage their gym appointments as well as clients.",
+      "A web-based project for information management system 1. Aims to provide a platform for gym owners to manage their gym appointments as well as clients to schedule gym appoinment.",
     footerText: "PHP / MySQL",
     footerIconClass: "bg-blue-500",
     githubLink: "https://github.com/Jethrr/gymchum",
@@ -59,7 +58,7 @@ const cardsData: CardData[] = [
     footerText: "Java / Swing",
     footerIconClass: "bg-orange-500",
     githubLink: "https://github.com/Jethrr/MonopolyClone_OOP_G6",
-    imageUrl: "src/assets/images/csc.png",
+    imageUrl: "src/assets/images/oop1.jpg",
   },
 
   {
@@ -72,44 +71,65 @@ const cardsData: CardData[] = [
     footerIconClass: "bg-orange-500",
     githubLink:
       "https://github.com/Dioooooooooooooooo/Lerch-Grossman-Visualization",
-    imageUrl: "src/assets/images/csc.png",
+    imageUrl: "src/assets/images/OOP2.png",
   },
 ];
 
-const Home = () => {
+const Projects = () => {
   return (
     <div className="relative w-full">
       <GridBackgroundDemo />
 
       <div className="relative z-10 w-full  text-[#B2B5AD] flex items-center justify-center">
         <Spotlight />
-        <div className="home-container h-full w-full shadow-xl mx-4 xl:mx-60 bg-black">
+        <div className="home-container h-full w-full  mx-4 xl:mx-60 bg-black dark:bg-white dark:text-black">
           <Navbar />
 
-          <div className="home-contents my-16 px-3 ">
-            <h3 className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left">
+          <div className="home-contents my-16 px-3">
+            <motion.h3
+              className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            >
               Projects
-            </h3>
+            </motion.h3>
 
             <div className="projects-nav mt-10">
               {cardsData.map((card, index) => (
-                <CardComponent
+                <motion.div
                   key={index}
-                  title={card.title}
-                  description={card.description}
-                  content={card.content}
-                  footerText={card.footerText}
-                  footerIconClass={card.footerIconClass}
-                  githubLink={card.githubLink}
-                  imageUrl={card.imageUrl}
-                />
+                  className="card-animation"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1, // Staggered animation based on index
+                    ease: "easeOut",
+                  }}
+                >
+                  <CardComponent
+                    title={card.title}
+                    description={card.description}
+                    content={card.content}
+                    footerText={card.footerText}
+                    footerIconClass={card.footerIconClass}
+                    githubLink={card.githubLink}
+                    imageUrl={card.imageUrl}
+                  />
+                </motion.div>
               ))}
             </div>
 
             <div className="techstack-nav my-10">
-              <h3 className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left">
+              <motion.h3
+                className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+              >
                 Technologies
-              </h3>
+              </motion.h3>
 
               <div className="tech-nav">
                 <CardHoverEffectDemo />
@@ -122,4 +142,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Projects;

@@ -6,6 +6,7 @@ import {
   faFacebook,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
 
 const facebook = (
   <FontAwesomeIcon
@@ -50,31 +51,43 @@ export function TypewriterEffect() {
   ];
   return (
     <div className="flex flex-col items-center justify-center h-[20rem] lg:mt-20 ">
-      <p className="text-white dark:text-black text-xs sm:text-base mt-[-10]">
-        Got a project in mind or just want to chat?
-      </p>
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <p className="text-white dark:text-black text-xs sm:text-base mt-[-10]">
+          Got a project in mind or just want to chat?
+        </p>
+      </motion.div>
       <TypewriterEffectSmooth words={words} />
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-        <div className="social-media-navs">
-          <div className="nav-links">
-            <ul className="flex items-center justify-center gap-5">
-              <li>
-                <a href="https://www.facebook.com/profile.php?id=100094149589311">
-                  {facebook}
-                </a>
-              </li>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+      >
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
+          <div className="social-media-navs">
+            <div className="nav-links">
+              <ul className="flex items-center justify-center gap-5">
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=100094149589311">
+                    {facebook}
+                  </a>
+                </li>
 
-              <li>
-                <a href="https://github.com/Jethrr">{github}</a>
-              </li>
+                <li>
+                  <a href="https://github.com/Jethrr">{github}</a>
+                </li>
 
-              <li>
-                <a href="https://www.instagram.com/jethvrdio/">{instagram}</a>
-              </li>
-            </ul>
+                <li>
+                  <a href="https://www.instagram.com/jethvrdio/">{instagram}</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

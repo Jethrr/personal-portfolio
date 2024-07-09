@@ -1,9 +1,15 @@
 import { HoverEffect } from "../ui/card-hover-effect";
-
+import { motion } from "framer-motion";
 export function CardHoverEffectDemo() {
   return (
     <div className="max-w-full md:mx-auto md:py-8">
-      <HoverEffect items={projects} />
+      <motion.h3
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+      >
+        <HoverEffect items={projects} />
+      </motion.h3>
     </div>
   );
 }

@@ -31,7 +31,7 @@ const CardComponent: React.FC<CardProps> = ({
 }) => {
   return (
     <div>
-      <Card className="text-white mb-5 flex items-center justify-between">
+      <Card className="text-white mb-5 flex items-center justify-between dark:text-black">
         <div className="card-nav">
           <CardHeader className="flex justify-between">
             <div className="header">
@@ -53,7 +53,7 @@ const CardComponent: React.FC<CardProps> = ({
               <Link to={githubLink}>
                 <Button
                   variant="outline"
-                  className="hover:bg-opacity-50 bg-gray-50 text-black"
+                  className="hover:bg-opacity-50 bg-gray-50 text-black dark:bg-gray-800 dark:text-white dark:hover:bg-opacity-50"
                 >
                   <FaGithub size={20} className="mr-1" />
                   Github
@@ -67,7 +67,7 @@ const CardComponent: React.FC<CardProps> = ({
           <img
             src={imageUrl}
             alt={title}
-            className="md:w-56 md:h-36 object-cover rounded md:block hidden"
+            className="md:w-56 md:h-36 object-cover rounded md:block hidden dark:outline"
           />
         </div>
       </Card>

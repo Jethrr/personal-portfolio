@@ -64,6 +64,14 @@ module.exports = {
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
+
+    function ({ addBase }) {
+      addBase({
+        "*": {
+          transition: "background-color 0.3s ease, color 0.3s ease",
+        },
+      });
+    },
   ],
 };
 
