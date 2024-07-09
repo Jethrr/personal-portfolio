@@ -24,7 +24,7 @@ const cardsData: CardData[] = [
     footerText: "Java / Firebase",
     footerIconClass: "bg-orange-500",
     githubLink: "https://github.com/Jethrr/TeknoLost",
-    imageUrl: "src/assets/images/teknolost.png",
+    imageUrl: "/images/teknolost.png",
   },
   {
     title: "GymChum Website",
@@ -35,7 +35,7 @@ const cardsData: CardData[] = [
     footerText: "PHP / MySQL",
     footerIconClass: "bg-blue-500",
     githubLink: "https://github.com/Jethrr/gymchum",
-    imageUrl: "src/assets/images/gymchum.png",
+    imageUrl: "/images/gymchum.png",
   },
 
   {
@@ -47,7 +47,7 @@ const cardsData: CardData[] = [
     footerText: "HTML / CSS / JS",
     footerIconClass: "bg-yellow-500",
     githubLink: "https://github.com/Jethrr/CSIT201Final",
-    imageUrl: "src/assets/images/csc.png",
+    imageUrl: "/images/csc.png",
   },
 
   {
@@ -58,7 +58,7 @@ const cardsData: CardData[] = [
     footerText: "Java / Swing",
     footerIconClass: "bg-orange-500",
     githubLink: "https://github.com/Jethrr/MonopolyClone_OOP_G6",
-    imageUrl: "src/assets/images/oop1.jpg",
+    imageUrl: "/images/oop1.jpg",
   },
 
   {
@@ -71,7 +71,7 @@ const cardsData: CardData[] = [
     footerIconClass: "bg-orange-500",
     githubLink:
       "https://github.com/Dioooooooooooooooo/Lerch-Grossman-Visualization",
-    imageUrl: "src/assets/images/OOP2.png",
+    imageUrl: "/images/OOP2.png",
   },
 ];
 
@@ -95,7 +95,12 @@ const Projects = () => {
               Projects
             </motion.h3>
 
-            <div className="projects-nav mt-10">
+            <motion.div
+              className="projects-nav mt-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+            >
               {cardsData.map((card, index) => (
                 <motion.div
                   key={index}
@@ -103,8 +108,8 @@ const Projects = () => {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.6,
-                    delay: index * 0.1, // Staggered animation based on index
+                    duration: 1,
+                    delay: index * 0.1,
                     ease: "easeOut",
                   }}
                 >
@@ -119,7 +124,7 @@ const Projects = () => {
                   />
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             <div className="techstack-nav my-10">
               <motion.h3

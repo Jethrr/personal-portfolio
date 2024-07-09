@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/ui/Navbar";
-import Profile from "../assets/images/Profile.jpg";
+import Profile from "/images/Profile.jpg";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { GridBackgroundDemo } from "@/components/ui/GridBackgroundDemo";
 import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
