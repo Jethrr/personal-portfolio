@@ -49,14 +49,14 @@ const Contacts: React.FC = () => {
   };
 
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative min-h-screen  w-full">
       <GridBackgroundDemo />
-      <div className="relative z-10 w-full h-screen text-[#B2B5AD] flex items-center justify-center">
+      <div className="relative z-10 w-full  text-[#B2B5AD] flex items-center justify-center">
         <Spotlight />
         <div className="home-container h-full w-full mx-4 xl:mx-60">
           <Navbar />
 
-          <div className="home-contents my-8 dark:white">
+          <div className="home-contents  dark:white">
             <Typewriter />
             {/* Contact Form Section */}
             <motion.div

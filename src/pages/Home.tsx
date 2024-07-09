@@ -7,9 +7,9 @@ import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
 
 const Home = () => {
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative w-full">
       <GridBackgroundDemo />
-      <div className="relative z-10 w-full h-screen text-[#B2B5AD] flex items-center justify-center">
+      <div className="relative z-10 w-full  text-[#B2B5AD] flex items-center justify-center">
         <Spotlight />
         <div className="home-container h-full w-full mx-4 xl:mx-60">
           <Navbar />
