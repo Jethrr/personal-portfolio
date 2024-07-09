@@ -1,5 +1,4 @@
 import { Spotlight } from "../ui/Spotlight";
-import { cn } from "../../lib/utils";
 
 export function SpotlightPreview() {
   return (
