@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import HeroCircles from "./HeroCircles";
+// import HeroCircles from "./HeroCircles";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -135,7 +135,8 @@ const Navbar = () => {
           </div>
 
           <div className="dots hidden md:block">
-            <HeroCircles />
+            {/* <HeroCircles /> */}
+            <p className=" font-bold dark:text-black text-white text-2xl hover:cursor-pointer hover:scale-105">JETHR</p>
           </div>
 
           <ul className="gap-5 hidden md:flex">

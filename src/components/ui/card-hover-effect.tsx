@@ -46,7 +46,7 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card className="outline dark:bg-transparent">
-            <div className="mt-4 h-20 w-full flex justify-center items-center">
+            <div className="mt-4 h-10 w-full flex justify-center items-center">
               <img
                 src={item.imgUrl}
                 alt={item.title}
@@ -92,7 +92,7 @@ export const CardTitle = ({
   return (
     <h4
       className={cn(
-        " flex items-center justify-center text-zinc-100 font-bold text-xl tracking-wide mt-4 dark:text-black",
+        " flex items-center justify-center text-zinc-100 font-bold text-md tracking-wide mt-4 dark:text-black",
         className
       )}
     >

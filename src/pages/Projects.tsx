@@ -126,7 +126,7 @@ const Projects = () => {
               ))}
             </motion.div>
 
-            <div className="techstack-nav my-10">
+            <div className="techstack-nav my-5">
               <motion.h3
                 className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
                 initial={{ opacity: 0, y: 50 }}

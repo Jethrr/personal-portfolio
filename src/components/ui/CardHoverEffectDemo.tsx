@@ -2,7 +2,7 @@ import { HoverEffect } from "../ui/card-hover-effect";
 import { motion } from "framer-motion";
 export function CardHoverEffectDemo() {
   return (
-    <div className="max-w-full md:mx-auto md:py-8">
+    <div className="max-w-full md:mx-auto md:py-5 ">
       <motion.h3
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -26,14 +26,14 @@ export const projects = [
       "https://cdn.icon-icons.com/icons2/2415/PNG/512/typescript_original_logo_icon_146317.png",
   },
   {
-    title: "Java",
+    title: "Django",
     imgUrl:
-      "https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_logo_icon_146458.png",
+      "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_django_icon_130645.png",
   },
   {
-    title: "PHP",
+    title: "NextJS",
     imgUrl:
-      "https://cdn.icon-icons.com/icons2/2415/PNG/512/php_plain_logo_icon_146397.png",
+      "https://miro.medium.com/v2/resize:fit:1258/1*okiCUvTUJLtOqJv1dMzwpA.png",
   },
 
   {
@@ -64,9 +64,9 @@ export const projects = [
       "https://cdn.icon-icons.com/icons2/2415/PNG/512/postgresql_plain_wordmark_logo_icon_146390.png",
   },
   {
-    title: "Git",
+    title: "Svelte",
     imgUrl:
-      "https://cdn.icon-icons.com/icons2/2415/PNG/512/git_original_wordmark_logo_icon_146510.png",
+      "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_svelte_icon_130137.png",
   },
   {
     title: "Postman",

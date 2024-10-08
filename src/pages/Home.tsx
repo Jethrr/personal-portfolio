@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/ui/Navbar";
 import Profile from "/images/Profile.jpg";
 import { Spotlight } from "@/components/ui/Spotlight";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { GridBackgroundDemo } from "@/components/ui/GridBackgroundDemo";
 import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
 
@@ -44,11 +46,35 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
                 >
-                  "Hi, I am a Computer Science student from Cebu Institute Of
-                  Technology University. <br /> Aspiring to be a Full Stack
-                  Developer."
+                  "A passionate computer student from the <strong>Philippines</strong> on a mission to transforms <br /> people's live through software development, machine learning, and AI.
+                 "
                 </motion.blockquote>
+
+                <div className="shimmer-button my-5 gap-5 ">
+                <button className="gap-2 inline-flex h-9 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                  <FontAwesomeIcon icon={faFileArrowDown} />
+
+                      Resume
+                  </button>
+
+                  {/* <button className="px-6 py-2 rounded-md bg-white text-black font-bold transition duration-200 hover:bg-black hover:text-white border-2 border-transparent hover:border-white">
+                      Resume
+                  </button> */}
+
+                
+
+                </div>
+                  
               </div>
+
+              
+       
+      
+  
+       
+       
+      
+
               <motion.div
                 className="img-div p-5"
                 initial={{ opacity: 0 }}
@@ -62,6 +88,12 @@ const Home = () => {
               </motion.div>
             </motion.div>
             <TypewriterEffect />
+
+         
+            <div className="footer-div  flex justify-center ">
+            <p className="text-[12px]">Copyright © 2024 JETHRR. All rights reserved.</p>
+            </div>
+           
           </div>
         </div>
       </div>
