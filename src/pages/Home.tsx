@@ -3,7 +3,7 @@ import Navbar from "@/components/ui/Navbar";
 import Profile from "/images/Profile.jpg";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileArrowDown, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { GridBackgroundDemo } from "@/components/ui/GridBackgroundDemo";
 import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
 

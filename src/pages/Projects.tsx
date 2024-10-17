@@ -3,7 +3,7 @@ import Navbar from "@/components/ui/Navbar";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { GridBackgroundDemo } from "@/components/ui/GridBackgroundDemo";
 import CardComponent from "@/components/ui/CardComponent";
-import { CardHoverEffectDemo } from "@/components/ui/CardHoverEffectDemo";
+// import { CardHoverEffectDemo } from "@/components/ui/CardHoverEffectDemo";
 
 interface CardData {
   title: string;
