@@ -16,27 +16,29 @@ interface CardData {
 }
 
 const cardsData: CardData[] = [
-  {
-    title: "TeknoLost App",
+   {
+    title: "Nest",
     description:
-      "A lost and found mobile application built using Android Studio and Firebase.",
-    content: "This is my final Project for CSIT284 platform based development.",
-    footerText: "Java / Firebase",
+      "A full stack web link organizing and sharing platform",
+    content:
+      "A web app  developed to address these issues by providing an automated solution for categorizing, and managing events such as meetings etc, ultimately enhancing productivity and reducing the burden of manual calendar management.",
+    footerText: "Django / Tailwind / PostgreSQL",
     footerIconClass: "bg-orange-500",
     githubLink: "https://github.com/Jethrr/TeknoLost",
-    imageUrl: "/images/teknolost.png",
+    imageUrl: "/images/NEST.png",
   },
-  {
-    title: "GymChum Website",
-    description:
-      "A gym appoinment/management system built using PHP and MYSQL.",
-    content:
-      "A web-based project for information management system 1. Aims to provide a platform for gym owners to manage their gym appointments as well as clients to schedule gym appoinment.",
-    footerText: "PHP / MySQL",
-    footerIconClass: "bg-blue-500",
-    githubLink: "https://github.com/Jethrr/gymchum",
-    imageUrl: "/images/gymchum.png",
-  },
+  // {
+  //   title: "TeknoLost App",
+  //   description:
+  //     "A lost and found mobile application built using Android Studio and Firebase.",
+  //   content:
+  //     "A convenient lost-and-found app that helps users quickly locate and recover lost items. With features to post lost or found items, browse recent listings, and connect with others nearby, FindIt makes it easy to reunite lost belongings with their owners. Whether it's a misplaced phone, keys, or valuable documents, FindIt simplifies the search process, helping you get back what matters most.",
+  //   footerText: "Java / Firebase / Android Studio",
+  //   footerIconClass: "bg-orange-500",
+  //   githubLink: "https://github.com/Jethrr/TeknoLost",
+  //   imageUrl: "/images/teknolost.png",
+  // },
+ 
 
   {
     title: "Creative Studio Collective",
@@ -44,22 +46,34 @@ const cardsData: CardData[] = [
       "A website i made for creative artist movement in cebu  built using HTML/CSS/JS.",
     content:
       "A web-based project for Platform Based Development Web. Aims to provide a platform for creative artist to showcase their works and connect with other artists.",
-    footerText: "HTML / CSS / JS",
+    footerText: "Html / CSS / Javascript / Wordpress",
     footerIconClass: "bg-yellow-500",
     githubLink: "https://github.com/Jethrr/CSIT201Final",
     imageUrl: "/images/csc.png",
   },
 
-  {
-    title: "Monopoly Clone",
-    description: "A game clone project build using Java and Swing.",
-    content:
-      "A game project for Object Oriented Programming 1. This is a monopoly game clone with modified features.",
-    footerText: "Java / Swing",
-    footerIconClass: "bg-orange-500",
-    githubLink: "https://github.com/Jethrr/MonopolyClone_OOP_G6",
-    imageUrl: "/images/oop1.jpg",
-  },
+  //  {
+  //   title: "GymChum Website",
+  //   description:
+  //     "A gym appoinment/management system built using PHP and MYSQL.",
+  //   content:
+  //     "A web-based project for information management system 1. Aims to provide a platform for gym owners to manage their gym appointments as well as clients to schedule gym appoinment.",
+  //   footerText: "PHP / MySQL / Tailwind",
+  //   footerIconClass: "bg-blue-500",
+  //   githubLink: "https://github.com/Jethrr/gymchum",
+  //   imageUrl: "/images/gymchum.png",
+  // },
+
+  // {
+  //   title: "Monopoly Clone",
+  //   description: "A game clone project build using Java and Swing.",
+  //   content:
+  //     "A game project for Object Oriented Programming 1. This is a monopoly game clone with modified features.",
+  //   footerText: "Java / Swing",
+  //   footerIconClass: "bg-orange-500",
+  //   githubLink: "https://github.com/Jethrr/MonopolyClone_OOP_G6",
+  //   imageUrl: "/images/oop1.jpg",
+  // },
 
   {
     title: "Lersch Grossman Algorithm Visualizer",
@@ -92,9 +106,19 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             >
-              Projects
+              Featured 
             </motion.h3>
 
+             <motion.h3
+              className="ml-20 scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            >
+              Projects 
+            </motion.h3>
+
+          
             <motion.div
               className="projects-nav mt-10"
               initial={{ opacity: 0 }}
@@ -126,7 +150,7 @@ const Projects = () => {
               ))}
             </motion.div>
 
-            <div className="techstack-nav my-5">
+            {/* <div className="techstack-nav my-5">
               <motion.h3
                 className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
                 initial={{ opacity: 0, y: 50 }}
@@ -139,7 +163,9 @@ const Projects = () => {
               <div className="tech-nav">
                 <CardHoverEffectDemo />
               </div>
-            </div>
+
+              
+            </div> */}
           </div>
         </div>
       </div>

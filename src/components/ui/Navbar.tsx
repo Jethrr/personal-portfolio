@@ -15,6 +15,8 @@ const Navbar = () => {
     if (storedTheme === "dark") {
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
@@ -54,7 +56,9 @@ const Navbar = () => {
           <AiOutlineClose size={24} />
         </button>
         <ul className="pt-10 space-y-5">
-          <Link to="/home">
+
+
+            <Link to="/home">
             <li
               className={`w-full hover:bg-gray-400 my-3 ${
                 !isDarkMode ? "hover:bg-gray-600" : "hover:bg-gray-200"
@@ -70,6 +74,25 @@ const Navbar = () => {
               </Button>
             </li>
           </Link>
+
+          <Link to="/about">
+            <li
+              className={`w-full hover:bg-gray-400 my-3 ${
+                !isDarkMode ? "hover:bg-gray-600" : "hover:bg-gray-200"
+              }`}
+            >
+              <Button
+                variant="secondary"
+                className={`text-md ${
+                  !isDarkMode ? "text-white" : "text-black"
+                }`}
+              >
+                About
+              </Button>
+            </li>
+          </Link>
+
+
 
           <Link to="/projects">
             <li
@@ -116,7 +139,7 @@ const Navbar = () => {
       >
         <nav className="p-3 flex items-center justify-between mt-10">
           <div
-            className="menu cursor-pointer block md:hidden"
+            className="menu cursor-pointer block md:hidden "
             onClick={toggleSidebar}
           >
             {isSidebarOpen ? (
@@ -136,35 +159,33 @@ const Navbar = () => {
 
           <div className="dots hidden md:block">
             {/* <HeroCircles /> */}
-            <p className=" font-bold dark:text-black text-white text-2xl hover:cursor-pointer hover:scale-105">JETHR</p>
-          </div>
 
+            <Link to="/home">
+           
+            <p className=" font-bold dark:text-black text-white text-2xl hover:cursor-pointer transition  hover:scale-105">
+              JETHR
+            </p>
+
+             </Link>
+          </div>
           <ul className="gap-5 hidden md:flex">
-            <li>
-              <Button
-                variant="link"
-                className="text-white text-md dark:text-black"
-              >
-                <Link to="/home">Home</Link>
-              </Button>
-            </li>
-            <li>
-              <Button
-                variant="link"
-                className="text-white text-md dark:text-black"
-              >
-                <Link to="/projects">Projects</Link>
-              </Button>
-            </li>
-            <li>
-              <Button
-                variant="link"
-                className="text-white text-md dark:text-black"
-              >
-                <Link to="/contacts">Contacts</Link>
-              </Button>
-            </li>
-          </ul>
+              <li>
+                <Button className="text-white text-md dark:text-black relative hover:before:scale-x-100 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[2px] before:bg-current before:scale-x-0 before:origin-left before:transition-transform before:duration-300">
+                  <Link to="/about">About</Link>
+                </Button>
+              </li>
+              <li>
+                <Button className="text-white text-md dark:text-black relative hover:before:scale-x-100 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[2px] before:bg-current before:scale-x-0 before:origin-left before:transition-transform before:duration-300">
+                  <Link to="/projects">Projects</Link>
+                </Button>
+              </li>
+              <li>
+                <Button className="text-white text-md dark:text-black relative hover:before:scale-x-100 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[2px] before:bg-current before:scale-x-0 before:origin-left before:transition-transform before:duration-300">
+                  <Link to="/contacts">Contacts</Link>
+                </Button>
+              </li>
+            </ul>
+
 
           <div className="icon">
             <Button onClick={toggleDarkMode}>

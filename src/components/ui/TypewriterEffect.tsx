@@ -68,7 +68,7 @@ export function TypewriterEffect() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <p className="text-white dark:text-black text-xs sm:text-base mt-[-10]">
+        <p className="text-white dark:text-black  sm:text-base mt-[-10]">
           Got a project in mind or just want to chat?
         </p>
       </motion.div>

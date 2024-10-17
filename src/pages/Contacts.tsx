@@ -67,7 +67,7 @@ const Contacts: React.FC = () => {
             >
               <form ref={form} onSubmit={sendEmail} className="space-y-4">
                 <div>
-                  <label
+                  {/* <label
                     htmlFor="user_name"
                     className="block text-sm font-medium text-white dark:text-black"
                   >
@@ -78,7 +78,22 @@ const Contacts: React.FC = () => {
                     name="user_name"
                     id="user_name"
                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-black dark:focus:border-black dark:border-black"
-                  />
+                  /> */}
+
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="user_name"
+                      className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-white bg-transparent rounded-lg border-1 border-black appearance-none dark:text-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      placeholder=" "
+                    />
+                    <label
+                      htmlFor="user_name"
+                      className="absolute text-sm text-gray-500 dark:text-blac duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] dark:bg-white bg-black  px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                    >
+                      Name
+                    </label>
+                  </div>
                 </div>
                 <div>
                   <label
