@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Navbar from "@/components/ui/Navbar";
+// import Navbar from "@/components/ui/Navbar";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { GridBackgroundDemo } from "@/components/ui/GridBackgroundDemo";
 import CardComponent from "@/components/ui/CardComponent";
@@ -16,10 +16,9 @@ interface CardData {
 }
 
 const cardsData: CardData[] = [
-   {
+  {
     title: "Nest",
-    description:
-      "A full stack web link organizing and sharing platform",
+    description: "A full stack web link organizing and sharing platform",
     content:
       "A web app  developed to address these issues by providing an automated solution for categorizing, and managing events such as meetings etc, ultimately enhancing productivity and reducing the burden of manual calendar management.",
     footerText: "Django / Tailwind / PostgreSQL",
@@ -38,7 +37,6 @@ const cardsData: CardData[] = [
   //   githubLink: "https://github.com/Jethrr/TeknoLost",
   //   imageUrl: "/images/teknolost.png",
   // },
- 
 
   {
     title: "Creative Studio Collective",
@@ -91,14 +89,13 @@ const cardsData: CardData[] = [
 
 const Projects = () => {
   return (
-    <div className="relative w-full">
+    <div id="projects" className="relative w-full">
       <GridBackgroundDemo />
 
       <div className="relative z-10 w-full  text-[#B2B5AD] flex items-center justify-center">
         <Spotlight />
         <div className="home-container h-full w-full  mx-4 xl:mx-60 bg-black dark:bg-white dark:text-black">
-          <Navbar />
-
+          {/* <Navbar /> */}s
           <div className="home-contents my-16 px-3">
             <motion.h3
               className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
@@ -106,21 +103,20 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             >
-              Featured 
+              Featured
             </motion.h3>
 
-             <motion.h3
+            <motion.h3
               className="ml-20 scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             >
-              Projects 
+              Projects
             </motion.h3>
 
-          
             <motion.div
-              className="projects-nav mt-10"
+              className="projects-nav mt-10 "
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
