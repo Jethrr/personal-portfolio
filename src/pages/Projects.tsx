@@ -73,18 +73,18 @@ const cardsData: CardData[] = [
   //   imageUrl: "/images/oop1.jpg",
   // },
 
-  {
-    title: "Lersch Grossman Algorithm Visualizer",
-    description:
-      "A lerch grossman algorithm visualizer built using Java and JavaFX.",
-    content:
-      "A simple visualizer we made for Object Oriented Programming 2. This aims to provide a visualizer for this specific algorithm using JavaFX for mining Engineers.",
-    footerText: "Java / JavaFX",
-    footerIconClass: "bg-orange-500",
-    githubLink:
-      "https://github.com/Dioooooooooooooooo/Lerch-Grossman-Visualization",
-    imageUrl: "/images/OOP2.png",
-  },
+  // {
+  //   title: "Lersch Grossman Algorithm Visualizer",
+  //   description:
+  //     "A lerch grossman algorithm visualizer built using Java and JavaFX.",
+  //   content:
+  //     "A simple visualizer we made for Object Oriented Programming 2. This aims to provide a visualizer for this specific algorithm using JavaFX for mining Engineers.",
+  //   footerText: "Java / JavaFX",
+  //   footerIconClass: "bg-orange-500",
+  //   githubLink:
+  //     "https://github.com/Dioooooooooooooooo/Lerch-Grossman-Visualization",
+  //   imageUrl: "/images/OOP2.png",
+  // },
 ];
 
 const Projects = () => {

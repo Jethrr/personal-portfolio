@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import HeroCircles from "./HeroCircles";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
@@ -10,6 +9,7 @@ import { Link as ScrollLink } from "react-scroll";
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -19,6 +19,15 @@ const Navbar = () => {
     } else {
       document.documentElement.classList.remove("dark");
     }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleSidebar = () => {
@@ -33,11 +42,17 @@ const Navbar = () => {
   };
 
   return (
-    <div className="nav-div   sticky top-0 ">
+    <div
+      className={`fixed top-0 left-0 right-0 mt-5 z-50 px-4 md:px-1  max-w-[1200px] mx-auto ${
+        scrolled
+          ? "bg-black dark:lg:bg-white lg:border lg:rounded-2xl"
+          : "bg-transparent"
+      }`}
+    >
       {/* Overlay */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-opacity-30 backdrop-filter backdrop-blur-[1px]"
+          className="fixed inset-0 bg-opacity-30 backdrop-filter backdrop-blur-[1px] z-40"
           onClick={toggleSidebar}
         ></div>
       )}
@@ -56,7 +71,7 @@ const Navbar = () => {
         >
           <AiOutlineClose size={24} />
         </button>
-        <ul className="pt-10 space-y-5">
+        <ul className="pt-10 space-y-5 ">
           <Link to="/home">
             <li
               className={`w-full hover:bg-gray-400 my-3 ${
@@ -132,36 +147,22 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="sticky top-0 z-10 bg-opacity-90 backdrop-blur-md"
+        className="bg-black dark:bg-white"
       >
-        <nav className="p-3 flex items-center justify-center mt-10 ">
-          {/* <div
-            className="menu cursor-pointer block md:hidden "
-            onClick={toggleSidebar}
-          >
-            {isSidebarOpen ? (
-              <Button variant="outline">
-                <AiOutlineClose
-                  size={24}
-                  className="text-current dark:text-black"
-                />
-              </Button>
-            ) : (
-              <AiOutlineMenu
-                size={24}
-                className="text-current dark:text-black"
-              />
-            )}
-          </div> */}
-
-          <div className="dots hidden md:block">
-            {/* <HeroCircles /> */}
-
-            {/* <Link to="/home">
-              <p className=" font-bold dark:text-black text-white text-2xl hover:cursor-pointer transition  hover:scale-105">
-                JETHR
+        <nav className="p-3 flex items-center justify-between">
+          <div className="dots hidden md:flex items-center gap-2 justify-center">
+            <img
+              className="mt-1"
+              src="/public/JETHRR.png"
+              alt="logo"
+              width={40}
+              height={50}
+            />
+            <Link to="/home">
+              <p className="font-bold dark:text-black text-white text-2xl hover:cursor-pointer transition hover:scale-105">
+                jethrr
               </p>
-            </Link> */}
+            </Link>
           </div>
           <ul className="gap-5 hidden md:flex">
             <li>
@@ -185,17 +186,14 @@ const Navbar = () => {
                 </ScrollLink>
               </Button>
             </li>
-
-            {/* <div className="icon"> */}
-            <Button onClick={toggleDarkMode}>
-              {isDarkMode ? (
-                <IoMoon size={24} className="text-current dark:text-black" />
-              ) : (
-                <IoSunny size={24} className="text-current dark:text-black" />
-              )}
-            </Button>
-            {/* </div> */}
           </ul>
+          <Button onClick={toggleDarkMode}>
+            {isDarkMode ? (
+              <IoMoon size={24} className="text-current dark:text-black" />
+            ) : (
+              <IoSunny size={24} className="text-current dark:text-black" />
+            )}
+          </Button>
         </nav>
       </motion.div>
     </div>

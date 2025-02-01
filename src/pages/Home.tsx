@@ -20,7 +20,7 @@ const Home = () => {
   // };
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full py-24">
       <GridBackgroundDemo />
       <div className="relative z-10 w-full  text-[#B2B5AD] flex items-center justify-center">
         <Spotlight />
@@ -31,7 +31,7 @@ const Home = () => {
             <ScrollToTopBtn />
             <motion.div
               className="header-nav flex flex-col-reverse xl:flex-row items-center justify-center p-5"
-              initial={{ opacity: 0, x: "-100vw" }}
+              initial={{ opacity: 0, x: 0 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
@@ -138,22 +138,30 @@ const Home = () => {
                     Resume
                   </button> */}
 
-                  <a
+                  <motion.a
                     className="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring"
                     href="https://www.linkedin.com/in/jether-omictin-a997351b6"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 1.1, ease: "easeOut" }}
                   >
                     <span className="absolute inset-0 border border-blue-600 group-active:border-blue-600"></span>
                     <span className="block border border-blue-600 bg-blue-600 px-12 py-3 transition-transform active:border-blue-600 active:bg-blue-600 group-hover:-translate-x-1 group-hover:-translate-y-1">
                       Resume
                     </span>
-                  </a>
+                  </motion.a>
                   <ScrollLink to="contacts" smooth={true} duration={500}>
-                    <a className="group relative inline-block text-sm font-medium text-blue-600 focus:outline-none focus:ring active:text-blue-600 cursor-pointer">
+                    <motion.a
+                      className="group relative inline-block text-sm font-medium text-blue-600 focus:outline-none focus:ring active:text-blue-600 cursor-pointer"
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1, delay: 1.1, ease: "easeOut" }}
+                    >
                       <span className="absolute inset-0 border border-current"></span>
                       <span className="block border border-current bg-white px-12 py-3 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1">
                         Get in touch
                       </span>
-                    </a>
+                    </motion.a>
                   </ScrollLink>
                   {/* <InteractiveHoverButton /> */}
                 </div>
@@ -166,7 +174,8 @@ const Home = () => {
                   duration: 2,
                   repeat: Infinity,
                   repeatType: "loop",
-                }} // Infinite loop with smooth transition
+                  ease: "easeIn",
+                }}
               >
                 <img
                   src={Profile}

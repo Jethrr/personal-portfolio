@@ -1,4 +1,3 @@
-import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 // import Navbar from "@/components/ui/Navbar";
 import { Spotlight } from "@/components/ui/Spotlight";
@@ -11,42 +10,53 @@ import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 import { motion } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useForm } from "react-hook-form";
+import { contactSchema } from "@/schema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useState } from "react";
 
 const Contacts: React.FC = () => {
-  const form = useRef<HTMLFormElement>(null);
+  // const form = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<z.infer<typeof contactSchema>>({
+    resolver: zodResolver(contactSchema),
+  });
   const { toast } = useToast();
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (form.current) {
-      emailjs
-        .sendForm(
-          "service_qjtm93p",
-          "template_ejk2mjg",
-          form.current,
-          "l9UXGH9zU0x9-8cWT"
-        )
-        .then(
-          () => {
-            toast({
-              title: "Your message has been sent successfully!",
-              description: "I'll get back to you as soon as possible.",
-            });
-            console.log("SUCCESS!");
-            form.current?.reset();
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-            toast({
-              variant: "destructive",
-              title: "Uh oh! Something went wrong.",
-              description: "There was a problem sending your message",
-              action: <ToastAction altText="Try again">Try again</ToastAction>,
-            });
-          }
-        );
-    }
+  const sendEmail = (data: z.infer<typeof contactSchema>) => {
+    setLoading(true);
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        data,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message sent!",
+            description: "I'll get back to you soon.",
+          });
+          reset();
+        },
+        (error) => {
+          console.error("Failed to send email:", error);
+          toast({
+            variant: "destructive",
+            title: "Error",
+            description: "Failed to send the message.",
+            action: <ToastAction altText="Retry">Retry</ToastAction>,
+          });
+        }
+      );
   };
 
   return (
@@ -67,20 +77,25 @@ const Contacts: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <form ref={form} onSubmit={sendEmail} className="space-y-4">
+              <form onSubmit={handleSubmit(sendEmail)} className="space-y-4">
                 <div>
                   <label
-                    htmlFor="user_name"
+                    htmlFor="name"
                     className="block text-sm font-medium text-white dark:text-black"
                   >
                     Name
                   </label>
                   <input
                     type="text"
-                    name="user_name"
-                    id="user_name"
+                    id="name"
+                    {...register("name")}
                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-black dark:focus:border-black dark:border-black"
                   />
+                  {errors.name && (
+                    <p className="mt-1 text-xs text-red-600">
+                      {errors.name.message}
+                    </p>
+                  )}
 
                   {/* <div className="relative">
                     <input
@@ -97,33 +112,41 @@ const Contacts: React.FC = () => {
                     </label>
                   </div> */}
                 </div>
+
                 <div>
-                  <label
-                    htmlFor="from_name"
-                    className="block text-sm font-medium text-white dark:text-black"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium">
                     Email
                   </label>
                   <input
                     type="email"
-                    name="from_name"
-                    id="from_name"
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-black dark:focus:border-black dark:border-black"
+                    id="email"
+                    {...register("email")}
+                    className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-xs text-red-600">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-white dark:text-black"
+                    className="block text-sm font-medium"
                   >
                     Message
                   </label>
                   <textarea
-                    name="message"
                     id="message"
                     rows={4}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-black dark:focus:border-black dark:border-black"
+                    {...register("message")}
+                    className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                   ></textarea>
+                  {errors.message && (
+                    <p className="mt-1 text-xs text-red-600">
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
                 <div>
                   {/* <input
@@ -154,7 +177,7 @@ const Contacts: React.FC = () => {
                     </span>
 
                     <span className="text-sm font-medium transition-all group-hover:me-1">
-                      Send{" "}
+                      {loading ? "Sending..." : "Send"}
                     </span>
                   </button>
                 </div>

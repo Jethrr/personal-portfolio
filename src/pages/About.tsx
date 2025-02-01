@@ -15,9 +15,8 @@ export const projects = [
   {
     title: "TypeScript",
     imgUrl:
-      "https://cdn.icon-icons.com/icons2/2415/PNG/512/typescript_original_logo_icon_146317.png",
+      "https://w7.pngwing.com/pngs/915/519/png-transparent-typescript-hd-logo-thumbnail.png",
   },
-
   {
     title: "NextJS",
     imgUrl:
@@ -25,15 +24,8 @@ export const projects = [
   },
 
   {
-    title: "Svelte",
-    imgUrl:
-      "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_svelte_icon_130137.png",
-  },
-
-  {
     title: "Django",
-    imgUrl:
-      "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_django_icon_130645.png",
+    imgUrl: "/public/logos/django.png",
   },
 
   {
@@ -44,8 +36,7 @@ export const projects = [
 
   {
     title: "NodeJS",
-    imgUrl:
-      "https://cdn.icon-icons.com/icons2/2415/PNG/512/nodejs_plain_logo_icon_146409.png",
+    imgUrl: "/public/logos/nodejs.png",
   },
   {
     title: "ExpressJS",
@@ -54,26 +45,21 @@ export const projects = [
   },
 
   {
-    title: "MySQL",
-    imgUrl:
-      "https://cdn.icon-icons.com/icons2/2415/PNG/512/mysql_original_wordmark_logo_icon_146417.png",
+    title: "Tensorflow",
+    imgUrl: "/public/logos/tensorflow.png",
+  },
+  {
+    title: "Prisma",
+    imgUrl: "/public/logos/prisma.png",
   },
   {
     title: "PostgreSQL",
-    imgUrl:
-      "https://cdn.icon-icons.com/icons2/2415/PNG/512/postgresql_plain_wordmark_logo_icon_146390.png",
-  },
-
-  {
-    title: "Postman",
-    imgUrl:
-      "https://cdn.icon-icons.com/icons2/3053/PNG/512/postman_macos_bigsur_icon_189815.png",
+    imgUrl: "/public/logos/postgres.png",
   },
 
   {
     title: "TailwindCSS",
-    imgUrl:
-      "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_tailwind_icon_130128.png",
+    imgUrl: "/public/logos/tailwind.png",
   },
 ];
 
