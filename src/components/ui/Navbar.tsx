@@ -43,9 +43,9 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 mt-5 z-50 px-4 md:px-1  max-w-[1200px] mx-auto ${
+      className={` hidden  md:block fixed top-0 left-0 right-0 mt-5 z-50  md:px-1  max-w-[1200px] mx-auto ${
         scrolled
-          ? "bg-black dark:lg:bg-white lg:border lg:rounded-2xl"
+          ? "bg-black  dark:lg:bg-white lg:border lg:rounded-2xl"
           : "bg-transparent"
       }`}
     >
@@ -147,13 +147,13 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="bg-black dark:bg-white"
+        className=" dark:bg-white rounded-2xl"
       >
-        <nav className="p-3 flex items-center justify-between">
+        <nav className="  p-3 flex items-center justify-between">
           <div className="dots hidden md:flex items-center gap-2 justify-center">
             <img
               className="mt-1"
-              src="/public/JETHRR.png"
+              src="/JETHRR.png"
               alt="logo"
               width={40}
               height={50}

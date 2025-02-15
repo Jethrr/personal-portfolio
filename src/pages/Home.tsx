@@ -63,7 +63,7 @@ const Home = () => {
                 </motion.h2>
 
                 <motion.h3
-                  className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
+                  className="scroll-m-20 text-4xl xl:text-7xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}

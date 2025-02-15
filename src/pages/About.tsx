@@ -25,7 +25,7 @@ export const projects = [
 
   {
     title: "Django",
-    imgUrl: "/public/logos/django.png",
+    imgUrl: "/logos/django.png",
   },
 
   {
@@ -36,7 +36,7 @@ export const projects = [
 
   {
     title: "NodeJS",
-    imgUrl: "/public/logos/nodejs.png",
+    imgUrl: "/logos/nodejs.png",
   },
   {
     title: "ExpressJS",
@@ -46,20 +46,20 @@ export const projects = [
 
   {
     title: "Tensorflow",
-    imgUrl: "/public/logos/tensorflow.png",
+    imgUrl: "/logos/tensorflow.png",
   },
   {
     title: "Prisma",
-    imgUrl: "/public/logos/prisma.png",
+    imgUrl: "/logos/prisma.png",
   },
   {
     title: "PostgreSQL",
-    imgUrl: "/public/logos/postgres.png",
+    imgUrl: "/logos/postgres.png",
   },
 
   {
     title: "TailwindCSS",
-    imgUrl: "/public/logos/tailwind.png",
+    imgUrl: "/logos/tailwind.png",
   },
 ];
 

@@ -95,7 +95,7 @@ const Projects = () => {
       <div className="relative z-10 w-full  text-[#B2B5AD] flex items-center justify-center">
         <Spotlight />
         <div className="home-container h-full w-full  mx-4 xl:mx-60 bg-black dark:bg-white dark:text-black">
-          {/* <Navbar /> */}s
+          {/* <Navbar /> */}
           <div className="home-contents my-16 px-3">
             <motion.h3
               className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
