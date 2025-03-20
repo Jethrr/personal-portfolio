@@ -72,7 +72,7 @@ const Home = () => {
   // };
 
   return (
-    <section id="about" className="relative w-full">
+    <div id="about" className="relative w-full">
       <GridBackgroundDemo />
       <div className="relative z-10 w-full  text-white flex items-center justify-center">
         <Spotlight />
@@ -81,7 +81,7 @@ const Home = () => {
 
           <div className="home-contents my-16 h-screen px-4">
             <motion.h3
-              className="scroll-m-20 mb-5 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
+              className="scroll-m-20 mb-5 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center dark:text-black"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -175,7 +175,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

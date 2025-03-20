@@ -21,23 +21,45 @@ const cardsData: CardData[] = [
     description: "A full stack web link organizing and sharing platform",
     content:
       "A web app  developed to address these issues by providing an automated solution for categorizing, and managing events such as meetings etc, ultimately enhancing productivity and reducing the burden of manual calendar management.",
-    footerText: "Django / Tailwind / PostgreSQL",
+    footerText: "Django / React /  Tailwind / PostgreSQL",
     footerIconClass: "bg-orange-500",
-    githubLink: "https://github.com/Jethrr/TeknoLost",
+    githubLink: "https://github.com/drkcutie/Nest",
     imageUrl: "/images/NEST.png",
   },
-  // {
-  //   title: "TeknoLost App",
-  //   description:
-  //     "A lost and found mobile application built using Android Studio and Firebase.",
-  //   content:
-  //     "A convenient lost-and-found app that helps users quickly locate and recover lost items. With features to post lost or found items, browse recent listings, and connect with others nearby, FindIt makes it easy to reunite lost belongings with their owners. Whether it's a misplaced phone, keys, or valuable documents, FindIt simplifies the search process, helping you get back what matters most.",
-  //   footerText: "Java / Firebase / Android Studio",
-  //   footerIconClass: "bg-orange-500",
-  //   githubLink: "https://github.com/Jethrr/TeknoLost",
-  //   imageUrl: "/images/teknolost.png",
-  // },
-
+  {
+    title: "Agrivision ",
+    description:
+      "An AI based mobile application to detect lettuce diseases from images.",
+    content:
+      "AgriVision is a mobile application that utilizes deep learning and computer vision to detect lettuce diseases from images. By leveraging a CNN-based model, the app helps farmers and agriculturists diagnose plant health efficiently and take early action to prevent crop loss.",
+    footerText: "React Native / Tensorflow / Express",
+    footerIconClass: "bg-orange-500",
+    githubLink: "https://github.com/ZenXen7/AgriVision",
+    imageUrl: "/images/agri.png",
+  },
+  {
+    title: "TeknoLost",
+    description:
+      "A lost and found mobile application built using Android Studio and Firebase.",
+    content:
+      "A convenient lost-and-found app that helps users quickly locate and recover lost items. With features to post lost or found items, browse recent listings, and connect with others nearby, FindIt makes it easy to reunite lost belongings with their owners. Whether it's a misplaced phone, keys, or valuable documents, FindIt simplifies the search process, helping you get back what matters most.",
+    footerText: "Java / Firebase / Android Studio",
+    footerIconClass: "bg-orange-500",
+    githubLink: "https://github.com/Jethrr/TeknoLost",
+    imageUrl: "/images/tekno.png",
+  },
+  {
+    title: "Lersch Grossman Algorithm Visualizer",
+    description:
+      "A lerch grossman algorithm visualizer built using Java and JavaFX.",
+    content:
+      "A simple visualizer we made for Object Oriented Programming 2. This aims to provide a visualizer for this specific algorithm using JavaFX for mining Engineers.",
+    footerText: "Java / JavaFX",
+    footerIconClass: "bg-orange-500",
+    githubLink:
+      "https://github.com/Dioooooooooooooooo/Lerch-Grossman-Visualization",
+    imageUrl: "/images/lersch.png",
+  },
   {
     title: "Creative Studio Collective",
     description:
@@ -72,19 +94,6 @@ const cardsData: CardData[] = [
   //   githubLink: "https://github.com/Jethrr/MonopolyClone_OOP_G6",
   //   imageUrl: "/images/oop1.jpg",
   // },
-
-  // {
-  //   title: "Lersch Grossman Algorithm Visualizer",
-  //   description:
-  //     "A lerch grossman algorithm visualizer built using Java and JavaFX.",
-  //   content:
-  //     "A simple visualizer we made for Object Oriented Programming 2. This aims to provide a visualizer for this specific algorithm using JavaFX for mining Engineers.",
-  //   footerText: "Java / JavaFX",
-  //   footerIconClass: "bg-orange-500",
-  //   githubLink:
-  //     "https://github.com/Dioooooooooooooooo/Lerch-Grossman-Visualization",
-  //   imageUrl: "/images/OOP2.png",
-  // },
 ];
 
 const Projects = () => {
@@ -98,7 +107,7 @@ const Projects = () => {
           {/* <Navbar /> */}
           <div className="home-contents my-16 px-3">
             <motion.h3
-              className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
+              className="scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center  dark:text-black"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -107,7 +116,7 @@ const Projects = () => {
             </motion.h3>
 
             <motion.h3
-              className="ml-20 scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center xl:text-left dark:text-black"
+              className=" scroll-m-20 text-4xl xl:text-6xl font-bold tracking-tight text-white text-center  dark:text-black"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
