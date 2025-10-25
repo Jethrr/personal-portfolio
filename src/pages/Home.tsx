@@ -81,23 +81,23 @@ const Home = () => {
     transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
   };
   
-  const slideInLeft = {
-    initial: { opacity: 0, x: -80 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-  };
+  // const slideInLeft = {
+  //   initial: { opacity: 0, x: -80 },
+  //   animate: { opacity: 1, x: 0 },
+  //   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+  // };
   
-  const slideInRight = {
-    initial: { opacity: 0, x: 80 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-  };
+  // const slideInRight = {
+  //   initial: { opacity: 0, x: 80 },
+  //   animate: { opacity: 1, x: 0 },
+  //   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+  // };
   
-  const scaleIn = {
-    initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-  };
+  // const scaleIn = {
+  //   initial: { opacity: 0, scale: 0.8 },
+  //   animate: { opacity: 1, scale: 1 },
+  //   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+  // };
   
   const toggleExperience = (index: string) => {
     setExpandedExperiences(prev => 
