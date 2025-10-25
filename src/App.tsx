@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Projects from "./pages/Projects";
 import Contacts from "./pages/Contacts";
 import About from "./pages/About";
+import WorkflowDetail from "./pages/WorkflowDetail";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/about" element={<About />} />
+          <Route path="/workflow/:slug" element={<WorkflowDetail />} />
         </Routes>
       </BrowserRouter>
     </>
