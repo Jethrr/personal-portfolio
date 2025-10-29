@@ -685,7 +685,15 @@ const Home = () => {
                 viewport={{ once: true, margin: "-50px" }}
               >
                 {[
-
+{
+  title: "Moodlequest",
+  description:
+    "MoodleQuest is the gamified learning platform that brings excitement to education. Complete quests, earn experience, and level up your knowledge every day.",
+    content: "MoodleQuest is the gamified learning platform that brings excitement to education. Complete quests, earn experience, and level up your knowledge every day.",
+    footerText: "NextJS / FastAPI / TypeScript / React / SendGrid",
+  githubLink: "https://moodlequest.vercel.app/",
+  imageUrl: "/images/moodlequest.png",
+},
 {
   title: "Velora",
   description:
@@ -695,6 +703,7 @@ const Home = () => {
   githubLink: "https://veloraio.vercel.app/",
   imageUrl: "/images/velora.png",
 },
+
 {
   title: "Pet Groomer's Hub",
   description:
