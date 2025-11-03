@@ -9,7 +9,7 @@ import { GridBackgroundDemo } from "@/components/ui/GridBackgroundDemo";
 // import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
 // import About from "./About";
 // import Projects from "./Projects";
-import Contacts from "./Contacts";
+// import Contacts from "./Contacts";
 import ScrollToTopBtn from "@/components/ui/ScrollToTopBtn";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -207,7 +207,7 @@ const Home = () => {
                 </motion.blockquote>
 
                 <div className="shimmer-button my-5 flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto">
-                  <ScrollLink to="projects" smooth={true} duration={500}> 
+                  <ScrollLink to="contacts" smooth={true} duration={500}> 
                     <motion.a
                       className="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring w-full sm:w-auto"
                       href="https://www.linkedin.com/in/jether-omictin-a997351b6"
@@ -217,11 +217,11 @@ const Home = () => {
                     >
                       <span className="absolute inset-0 border border-blue-600 group-active:border-blue-600"></span>
                       <span className="block border border-blue-600 bg-blue-600 px-8 sm:px-12 py-3 transition-transform active:border-blue-600 active:bg-blue-600 group-hover:-translate-x-1 group-hover:-translate-y-1 text-center">
-                        View Projects
+                       Get in Touch
                       </span>
                     </motion.a>
                   </ScrollLink>
-                  <ScrollLink to="contacts" smooth={true} duration={500}>
+                  <ScrollLink to="services" smooth={true} duration={500}>
                     <motion.a
                       className="group relative inline-block text-sm font-medium text-blue-600 focus:outline-none focus:ring active:text-blue-600 cursor-pointer w-full sm:w-auto"
                       initial={{ opacity: 0, y: 50 }}
@@ -230,7 +230,7 @@ const Home = () => {
                     >
                       <span className="absolute inset-0 border border-current"></span>
                       <span className="block border border-current bg-white px-8 sm:px-12 py-3 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 text-center">
-                        Get in touch
+                        See How Can I Help You
                       </span>
                     </motion.a>
                   </ScrollLink>
@@ -654,6 +654,103 @@ const Home = () => {
           {/* <About /> */}
           {/* <Projects /> */}
           
+          {/* Services Subsection */}
+          <div id="services" className="w-full py-20 px-4">
+            <motion.div
+              {...fadeInUp}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="max-w-7xl mx-auto"
+            >
+              <motion.div
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: -40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <h2 className="text-5xl xl:text-6xl font-bold text-white dark:text-black mb-4">
+                  Services I Offer
+                </h2>
+                <p className="text-white/70 dark:text-black/70 text-lg">
+                  Comprehensive web, automation, and AI solutions tailored for your business
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, margin: "-50px" }}
+              >
+                {[
+                  {
+                    title: "Custom Web Application Development",
+                    description:
+                      "Build responsive, scalable apps with React, Next.js, Node.js, integrated APIs & databases — including no‑code platforms like WordPress.",
+                    icon: "📊",
+                    color: "from-yellow-400 to-amber-500",
+                  },
+                  {
+                    title: "Workflow & Business Process Automation",
+                    description:
+                      "Automate repetitive tasks and connect tools using n8n, Make (Integromat), and Zapier to improve efficiency.",
+                    icon: "🔗",
+                    color: "from-blue-500 to-cyan-500",
+                  },
+                  {
+                    title: "CRM & Marketing Automation (GoHighLevel)",
+                    description:
+                      "Set up and optimize GoHighLevel automations, pipelines, funnels, and integrations for lead management.",
+                    icon: "⚡",
+                    color: "from-yellow-400 to-orange-500",
+                  },
+                  {
+                    title: "AI-Powered Chatbots & Assistants",
+                    description:
+                      "Create smart AI workflows using LLMs and automation tools for lead capture, support, and personalized responses.",
+                    icon: "🤖",
+                    color: "from-purple-500 to-pink-500",
+                  },
+                  {
+                    title: "API Integration & Custom Backend Services",
+                    description:
+                      "Develop and connect custom APIs between apps, databases, and third‑party platforms.",
+                    icon: "🧩",
+                    color: "from-emerald-500 to-green-500",
+                  },
+                  {
+                    title: "Full-Stack System Optimization & Maintenance",
+                    description:
+                      "Enhance performance, automate deployments, and ensure smooth end‑to‑end operations across your stack.",
+                    icon: "🛠️",
+                    color: "from-indigo-500 to-blue-600",
+                  },
+                ].map((service, index) => (
+                  <motion.div
+                    key={index}
+                    className="group relative"
+                    variants={staggerItem}
+                  >
+                    <div className="h-full bg-white/5 dark:bg-black/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 dark:border-black/10 hover:border-white/30 dark:hover:border-black/30 transition-all duration-300 group-hover:shadow-2xl">
+                      {/* Icon */}
+                      <div className="w-12 h-12 rounded-xl bg-white/10 dark:bg-black/10 flex items-center justify-center text-2xl mb-4">
+                        {service.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-white dark:text-black mb-2 group-hover:text-blue-400 dark:group-hover:text-blue-600 transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-white/70 dark:text-black/70 text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </div>
+          
           {/* Projects Section */}
           <div id="projects" className="w-full py-20 px-4">
             <motion.div
@@ -855,20 +952,20 @@ const Home = () => {
               >
                 {[
                   {
-                    title: "Email Agent  Workflow",
-                    description: "Automate email processing and responses using AI and N8N",
-                    category: "Email Automation",
-                    tags: ["AI", "Email", "Automation", "N8N"],
-                    slug: "email-automation",
+                    title: "Lead Generation Workflow",
+                    description: "Design high-converting funnels and websites using GHL’s builder. Integrate forms, calendars, and call-to-action automations.",
+                    category: "Lead Generation",
+                    tags: ["GoHighLevel", "Funnels", "Websites", "Automations"],
+                    slug: "lead-generation",
                     color: "blue",
                   },
                  
                   {
-                    title: "Budget Tracker Automation Workflow",
-                    description: "Automated budget tracking and management using N8N and Google Sheets via Telegram",
-                    category: "Finance Automation",
-                    tags: ["N8N", "Google Sheets", "Telegram", "Automation"],
-                    slug: "budget-tracker-automation",
+                    title: "Email, SMS & Chat Campaigns",
+                    description: "Create multi-channel campaigns and triggers for lead engagement.",
+                    category: "Email, SMS & Chat Campaigns",
+                    tags: ["GoHighLevel", "Email", "SMS", "Chat"],
+                    slug: "email-sms-chat-campaigns",
                     color: "green",
                   },
                 ].map((workflow, index) => (
@@ -1002,6 +1099,12 @@ const Home = () => {
                 viewport={{ once: true, margin: "-50px" }}
               >
                 {[
+                   {
+                    category: "Automation",
+                    skills: ["n8n","Make","Zapier", "GoHighLevel"],
+                    color: "from-yellow-500 to-orange-500",
+                    icon: "⚙️"
+                  },
                   {
                     category: "Languages",
                     skills: ["TypeScript", "JavaScript", "Java", "Python", "C", "C++"],
@@ -1038,12 +1141,7 @@ const Home = () => {
                     color: "from-teal-500 to-cyan-500",
                     icon: "🛠️"
                   },
-                  {
-                    category: "Automation",
-                    skills: ["N8N"],
-                    color: "from-yellow-500 to-orange-500",
-                    icon: "⚙️"
-                  },
+                 
                 ].map((skillGroup, index) => (
                   <motion.div
                     key={index}
@@ -1234,7 +1332,86 @@ const Home = () => {
             </motion.div>
           </div>
 
-          <Contacts />
+          {/* <Contacts /> */}
+
+         <div id="contacts" className="contact-calendar-page w-full py-20 px-4">
+           <div className="max-w-5xl mx-auto text-center">
+             <h1 className="text-4xl xl:text-5xl font-bold text-white dark:text-black mb-3">Let's Work Together</h1>
+             <p className="text-white/70 dark:text-black/70 text-base md:text-lg">
+               Have a project in mind? Schedule a meeting using the booking calendar below, or reach out through my social accounts.
+             </p>
+
+             <motion.div
+               className="mt-8 w-full"
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8 }}
+             >
+               <div className="w-full mx-auto max-w-3xl rounded-xl overflow-hidden border border-white/10 dark:border-black/10 bg-white/5 dark:bg-black/5">
+                 <iframe
+                   title="Google Calendar Appointment Scheduling"
+                   src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3uKlRqa0vobQEULyk8_YI7g4TnPEzdjNt94fWmg2XipeZC34pShQ46o42I1ygey_GkgJSUzZEo?gv=true"
+                   style={{ border: 0, width: "100%" }}
+                   width="100%"
+                   height={600}
+                   frameBorder={0}
+                 />
+               </div>
+             </motion.div>
+
+             <div className="relative w-full my-10">
+               
+               <div className="relative flex justify-center text-sm">
+                 <span className="px-3 bg-transparent text-white/70 dark:text-black/70">Or connect with me</span>
+               </div>
+             </div>
+
+             <div className="w-full flex items-center justify-center gap-3 flex-wrap">
+               <a
+                 href="https://www.facebook.com/profile.php?id=100094149589311"
+                 className="cursor-pointer p-2 rounded-lg flex items-center border bg-white border-gray-300 justify-center transition-all duration-300 hover:border-gray-200 hover:bg-gray-100"
+                 aria-label="Facebook"
+                 target="_blank"
+                 rel="noreferrer"
+               >
+                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 71 72" fill="none">
+                   <path d="M46.4233 38.6403L47.7279 30.3588H39.6917V24.9759C39.6917 22.7114 40.8137 20.4987 44.4013 20.4987H48.1063V13.4465C45.9486 13.1028 43.7685 12.9168 41.5834 12.8901C34.9692 12.8901 30.651 16.8626 30.651 24.0442V30.3588H23.3193V38.6403H30.651V58.671H39.6917V38.6403H46.4233Z" fill="#111827"/>
+                 </svg>
+               </a>
+
+               <a
+                 href="https://www.linkedin.com/in/jether-omictin-a997351b6/"
+                 className="cursor-pointer p-2 rounded-lg flex items-center border bg-white border-gray-300 justify-center transition-all duration-300 hover:border-gray-200 hover:bg-gray-100"
+                 aria-label="LinkedIn"
+                 target="_blank"
+                 rel="noreferrer"
+               >
+                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
+                   <path d="M24.7612 55.999V28.3354H15.5433V55.999H24.7621H24.7612ZM20.1542 24.5591C23.3679 24.5591 25.3687 22.4348 25.3687 19.7801C25.3086 17.065 23.3679 15 20.2153 15C17.0605 15 15 17.065 15 19.7799C15 22.4346 17.0001 24.5588 20.0938 24.5588H20.1534L20.1542 24.5591ZM29.8633 55.999H39.0805V40.5521C39.0805 39.7264 39.1406 38.8985 39.3841 38.3088C40.0502 36.6562 41.5668 34.9455 44.1138 34.9455C47.4484 34.9455 48.7831 37.4821 48.7831 41.2014V55.999H58V40.1376C58 31.6408 53.4532 27.6869 47.3887 27.6869C42.4167 27.6869 40.233 30.4589 39.0198 32.347H39.0812V28.3364H29.8638C29.9841 30.9316 29.8631 56 29.8631 56L29.8633 55.999Z" fill="#111827"/>
+                 </svg>
+               </a>
+
+               <a
+                 href="https://www.instagram.com/jethvrdio/"
+                 className="cursor-pointer p-2 rounded-lg flex items-center border bg-white border-gray-300 justify-center transition-all duration-300 hover:border-gray-200 hover:bg-gray-100"
+                 aria-label="Instagram"
+                 target="_blank"
+                 rel="noreferrer"
+               >
+                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 71 72" fill="none">
+                   <path d="M27.3762 35.7808C27.3762 31.1786 31.1083 27.4468 35.7132 27.4468C40.3182 27.4468 44.0522 31.1786 44.0522 35.7808C44.0522 40.383 40.3182 44.1148 35.7132 44.1148C31.1083 44.1148 27.3762 40.383 27.3762 35.7808ZM22.8683 35.7808C22.8683 42.8708 28.619 48.618 35.7132 48.618C42.8075 48.618 48.5581 42.8708 48.5581 35.7808C48.5581 28.6908 42.8075 22.9436 35.7132 22.9436C28.619 22.9436 22.8683 28.6908 22.8683 35.7808Z" fill="#111827"/>
+                 </svg>
+               </a>
+             </div>
+           </div>
+         </div>
+
+         <div className="footer-div  flex justify-center mt-20">
+                  <p className="text-sm dark:text-black justify-center text-center text-white ">
+                    Copyright © 2024 JETHRR. All rights reserved. <br /> {""}{" "}
+                    Build with ❤️.
+                  </p>
+                </div>
         </div>
       </div>
       

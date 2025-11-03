@@ -134,19 +134,12 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <Button
               onClick={toggleSidebar}
-              className="md:hidden text-white dark:text-black"
+              className="md:hidden text-white dark:text-black "
             >
               <HiMenu size={24} />
             </Button>
 
-            {/* Mobile Theme Toggle (inside sidebar) */}
-            <Button onClick={toggleDarkMode} className="md:hidden">
-              {isDarkMode ? (
-                <IoMoon size={20} className="text-white" />
-              ) : (
-                <IoSunny size={20} className="text-black" />
-              )}
-            </Button>
+           
           </div>
         </nav>
       </motion.div>
@@ -216,6 +209,18 @@ const Navbar = () => {
                 Contact
               </Button>
             </ScrollLink>
+           
+            <Button onClick={toggleDarkMode} className="w-full  text-white dark:text-black hover:bg-white/10 dark:hover:bg-black/10">
+              {isDarkMode ? (
+                 <Button className="w-full justify-start text-left text-white dark:text-black ">
+                 Dark Mode
+               </Button>
+              ) : (
+                <Button className="w-full justify-start text-left text-white dark:text-blac">
+                 Light Mode
+               </Button>
+              )}
+            </Button>
           </nav>
 
           {/* Sidebar Footer */}
