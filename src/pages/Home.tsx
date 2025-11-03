@@ -217,7 +217,7 @@ const Home = () => {
                     >
                       <span className="absolute inset-0 border border-blue-600 group-active:border-blue-600"></span>
                       <span className="block border border-blue-600 bg-blue-600 px-8 sm:px-12 py-3 transition-transform active:border-blue-600 active:bg-blue-600 group-hover:-translate-x-1 group-hover:-translate-y-1 text-center">
-                       Get in Touch
+                       Lets Get in Touch
                       </span>
                     </motion.a>
                   </ScrollLink>
@@ -230,7 +230,7 @@ const Home = () => {
                     >
                       <span className="absolute inset-0 border border-current"></span>
                       <span className="block border border-current bg-white px-8 sm:px-12 py-3 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 text-center">
-                        See How Can I Help You
+                        See How Can I Help 
                       </span>
                     </motion.a>
                   </ScrollLink>
@@ -238,19 +238,92 @@ const Home = () => {
               </div>
 
               <motion.div
-                className="img-div flex items-center justify-center px-4 sm:px-5"
-                animate={{ y: [0, -10, 0] }} // Move up and down
+                className="relative img-div flex items-center justify-center px-4 sm:px-5"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  ease: "easeIn",
+                  duration: 1,
+                  delay: 1.5,
+                  scale: { type: "spring", visualDuration: 2, bounce: 0.5 },
                 }}
               >
                 <img
                   src={Profile}
-                  className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[350px] xl:max-w-[400px] h-auto rounded-full" // Keep the size constant
+                  className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[350px] xl:max-w-[400px] h-auto rounded-full"
                 />
+
+                {/* Floating, hoverable tech badges */}
+                <motion.div
+                  className="group flex items-center justify-center absolute -top-3 -left-2 md:-top-6 md:-left-6 w-8 h-8 md:w-12 md:h-12 rounded-full cursor-pointer"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: 1.8 },
+                    scale: { type: "spring", duration: 0.6, delay: 2.5 },
+                    y: { duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 2.1 },
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  style={{ backgroundColor: "rgba(240,90,40,0.15)", boxShadow: "0 0 0 10px rgba(240,90,40,0.06), 0 8px 20px rgba(240,90,40,0.15)", border: "1px solid rgba(240,90,40,0.2)" }}
+                >
+                  <img src="/logos/n8n.png" alt="n8n" className="w-7 h-7 md:w-8 md:h-8" />
+                  <div className="absolute -top-9 left-1/2 -translate-x-1/2 bg-black/90 text-white text-[10px] md:text-xs px-2 py-1 rounded-md shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all ">
+                    I love creating automations in n8n
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="group flex items-center justify-center absolute top-0 -right-3 md:-right-6 md:top-0 w-8 h-8 md:w-12 md:h-12 rounded-full cursor-pointer"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: 2.0 },
+                    scale: { type: "spring", duration: 0.6, delay: 2.7 },
+                    y: { duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 2.3 },
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  style={{ backgroundColor: "rgba(97,218,251,0.15)", boxShadow: "0 0 0 10px rgba(97,218,251,0.06), 0 8px 20px rgba(97,218,251,0.15)", border: "1px solid rgba(97,218,251,0.25)" }}
+                >
+                  <img src="/images/react.png" alt="React" className="w-7 h-7 md:w-8 md:h-8" />
+                  <div className="absolute -top-9 left-1/2 -translate-x-1/2 bg-black/90 text-white text-[10px] md:text-xs px-2 py-1 rounded-md shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all">
+                    Yes, I build frontend stuff with React
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="group flex items-center justify-center absolute -bottom-2 -left-3 md:-bottom-6 md:-left-8 w-8 h-8 md:w-12 md:h-12 rounded-full cursor-pointer"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: 2.2 },
+                    scale: { type: "spring", duration: 0.6, delay: 3.0 },
+                    y: { duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 },
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  style={{ backgroundColor: "rgba(14,165,233,0.15)", boxShadow: "0 0 0 10px rgba(14,165,233,0.06), 0 8px 20px rgba(14,165,233,0.15)", border: "1px solid rgba(14,165,233,0.25)" }}
+                >
+                  <img src="/logos/ghl.jpg" alt="GoHighLevel" className="w-7 h-7 md:w-8 md:h-8 object-contain" />
+                  <div className="absolute -bottom-9 left-1/2 -translate-x-1/2 bg-black/90 text-white text-[10px] md:text-xs px-2 py-1 rounded-md shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all">
+                    I automate funnels and CRM with GoHighLevel
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="group flex items-center justify-center absolute -bottom-3 -right-2 md:-bottom-6 md:-right-8 w-8 h-8 md:w-12 md:h-12 rounded-full cursor-pointer"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1, y: [0, -7, 0] }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: 2.4 },
+                    scale: { type: "spring", duration: 0.6, delay: 3.2 },
+                    y: { duration: 2.6, repeat: Infinity, ease: "easeInOut", delay: 2.7 },
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  style={{ backgroundColor: "rgba(205,254,194,1)", boxShadow: "0 0 0 10px rgba(205,254,194,1), 0 8px 20px rgba(6,182,212,0.18)", border: "1px solid rgba(6,182,212,0.25)" }}
+                >
+                  <img src="/logos/nodejs.png" alt="Node.js" className="w-7 h-7 md:w-8 md:h-8" />
+                  <div className="absolute -bottom-9 left-1/2 -translate-x-1/2 bg-black/90 text-white text-[10px] md:text-xs px-2 py-1 rounded-md shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all">
+                    I build robust backends with Node.js
+                  </div>
+                </motion.div>
               </motion.div>
             </motion.div>
             {/* <TypewriterEffect /> */}
@@ -263,19 +336,23 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               className="max-w-6xl mx-auto"
+              
             >
               <motion.h2 
                 className="text-4xl xl:text-5xl font-bold text-white dark:text-black text-center mb-12"
                 initial={{ opacity: 0, y: -30, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
               >
                 About Me
               </motion.h2>
 
               {/* Tab Navigation */}
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <motion.div className="flex flex-wrap justify-center gap-4 mb-8"
+               initial={{ opacity: 0, y: 50 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 1, delay: 1.7, ease: "easeOut" }}
+              >
                 {[
                   { id: "about", label: "About Me" },
                   { id: "achievements", label: "Achievements" },
@@ -283,6 +360,7 @@ const Home = () => {
                   { id: "experience", label: "Experience" },
                 ].map((tab) => (
                   <button
+                  
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
@@ -294,7 +372,7 @@ const Home = () => {
                     {tab.label}
                   </button>
                 ))}
-              </div>
+              </motion.div>
 
               {/* Tab Content */}
               <motion.div
@@ -306,14 +384,18 @@ const Home = () => {
               >
                 {/* About Me Tab */}
                 {activeTab === "about" && (
-                  <div className="space-y-6">
+                  <motion.div className="space-y-6"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 2, ease: "easeOut" }}
+                  >
                     <h3 className="text-2xl md:text-3xl font-bold text-white dark:text-black mb-6">
                       Full-Stack Developer & AI Automation Specialist
                     </h3>
                     <p className="text-lg text-white/90 dark:text-black/90 leading-relaxed">
                       Full-Stack Developer and AI Automation Specialist dedicated to help clients build and streamline digital systems. Extensive experience in creating powerful, custom applications and leveraging AI tools to automate business processes. I focus on optimizing workflows, reducing manual effort, and delivering measurable increases in operational efficiency and performance.
                     </p>
-                  </div>
+                  </motion.div>
                 )}
 
                 {/* Achievements Tab */}
@@ -1336,10 +1418,18 @@ const Home = () => {
 
          <div id="contacts" className="contact-calendar-page w-full py-20 px-4">
            <div className="max-w-5xl mx-auto text-center">
-             <h1 className="text-4xl xl:text-5xl font-bold text-white dark:text-black mb-3">Let's Work Together</h1>
-             <p className="text-white/70 dark:text-black/70 text-base md:text-lg">
+             <motion.h1 className="text-4xl xl:text-5xl font-bold text-white dark:text-black mb-3"
+               initial={{ opacity: 0, y: 50 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+             >Let's Work Together</motion.h1>
+             <motion.p className="text-white/70 dark:text-black/70 text-base md:text-lg"
+               initial={{ opacity: 0, y: 50 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
+             >
                Have a project in mind? Schedule a meeting using the booking calendar below, or reach out through my social accounts.
-             </p>
+             </motion.p>
 
              <motion.div
                className="mt-8 w-full"
@@ -1347,7 +1437,11 @@ const Home = () => {
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.8 }}
              >
-               <div className="w-full mx-auto max-w-3xl rounded-xl overflow-hidden border border-white/10 dark:border-black/10 bg-white/5 dark:bg-black/5">
+               <motion.div className="w-full mx-auto max-w-3xl rounded-xl overflow-hidden border border-white/10 dark:border-black/10 bg-white/5 dark:bg-black/5"
+                 initial={{ opacity: 0, y: 50 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 1, delay: 1.4, ease: "easeOut" }}
+               >
                  <iframe
                    title="Google Calendar Appointment Scheduling"
                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3uKlRqa0vobQEULyk8_YI7g4TnPEzdjNt94fWmg2XipeZC34pShQ46o42I1ygey_GkgJSUzZEo?gv=true"
@@ -1356,7 +1450,7 @@ const Home = () => {
                    height={600}
                    frameBorder={0}
                  />
-               </div>
+               </motion.div>
              </motion.div>
 
              <div className="relative w-full my-10">
